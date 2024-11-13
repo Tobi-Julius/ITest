@@ -2,7 +2,6 @@ export const imageAddress = "https://i.sstatic.net/ro5mY.jpg?s=256";
 
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
-import { styles } from "./styles";
 
 export interface Item {
   label: string;
@@ -31,7 +30,7 @@ export const Option = ({ items, selectedItem, onPress }: Props) => {
             item.name === selectedItem.name ? "bg-white" : "bg-transparent"
           } w-1/2 items-center content-center rounded-full py-2`}
         >
-          <Text style={styles.options}>{item.label}</Text>
+          <Text className="font-montserratSemiBold text-lg">{item.label}</Text>
         </TouchableOpacity>
       ))}
     </View>

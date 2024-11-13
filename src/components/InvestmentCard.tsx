@@ -1,8 +1,9 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, TouchableOpacity } from "react-native";
 import React from "react";
 import { AntDesign, MaterialIcons } from "@expo/vector-icons";
-import { styles } from "@src/screens/home/styles";
 import { layout } from "@src/utils";
+import { Button } from "./Primary/Button";
+import { Text } from "./Primary/Text";
 
 export const InvestmentCard = () => {
   return (
@@ -10,62 +11,87 @@ export const InvestmentCard = () => {
       <View>
         <View className="flex flex-row items-center">
           <MaterialIcons
-            style={styles.checkIcon}
+            color={"#15803d"}
             name="check-circle"
             size={layout.fontPixel(18)}
           />
-          <Text style={styles.cardText} className="color-green-700 ml-3">
-            Start signing up
-          </Text>
+          <Text
+            className="color-green-700 ml-3 font-montserratSemiBold text-base"
+            text="Start signing up"
+          />
         </View>
-        <View style={styles.line} />
+        <View
+          style={{
+            borderLeftWidth: layout.fontPixel(1.5),
+            borderColor: "#15803d",
+            height: layout.heightPixel(30),
+            marginLeft: layout.fontPixel(8),
+          }}
+        />
       </View>
       <View>
         <View className="flex flex-row items-center">
           <MaterialIcons
-            style={styles.checkIcon}
+            color={"#15803d"}
             name="check-circle"
             size={layout.fontPixel(18)}
           />
-          <Text style={styles.cardText} className="color-green-700 ml-3">
-            Finish setting up your account
-          </Text>
+          <Text
+            className="color-green-700 ml-3 font-montserratSemiBold text-base"
+            text=" Finish setting up your account"
+          />
         </View>
-        <View style={styles.line} />
+        <View
+          style={{
+            borderLeftWidth: layout.fontPixel(1.5),
+            borderColor: "#15803d",
+            height: layout.heightPixel(30),
+            marginLeft: layout.fontPixel(8),
+          }}
+        />
       </View>
 
       <View>
         <View className="flex flex-row items-center">
           <AntDesign
-            style={styles.clockIcon}
+            color={"#245B9EFF"}
             name="clockcircle"
             size={layout.fontPixel(17)}
           />
-          <Text style={styles.cardText} className="color-black ml-3">
-            Add money to start investing
-          </Text>
+          <Text
+            className="color-black ml-3 font-montserratSemiBold text-base"
+            text={"Add money to start investing"}
+          />
         </View>
         <View className="flex flex-row items-start">
-          <View style={styles.lineAdd} />
-          <TouchableOpacity
-            activeOpacity={0.8}
-            className="ml-8 bg-blue-800 px-6 py-3 color-slate-50 mt-3 rounded-full"
-          >
-            <Text style={styles.btnText} className="color-slate-50">
-              Add money {"  "}→
-            </Text>
-          </TouchableOpacity>
+          <View
+            style={{
+              borderLeftWidth: layout.fontPixel(1.5),
+              borderColor: "#CECDCDB3",
+              height: layout.heightPixel(70),
+              marginLeft: layout.fontPixel(8),
+            }}
+          />
+          <Button
+            onPress={() => {}}
+            title="Add money     →"
+            buttonStyle="ml-8 bg-blue-800 px-6 py-3 color-slate-50 mt-3 rounded-full"
+            textStyle="color-white font-montserratSemiBold text-base"
+            intent="primary"
+            size="large"
+          />
         </View>
       </View>
       <View className="flex flex-row items-center">
         <AntDesign
-          style={styles.clockIconUnavailable}
+          color={"#CECDCDB3"}
           name="clockcircle"
           size={layout.fontPixel(17)}
         />
-        <Text style={styles.cardText} className="color-gray-500 ml-3">
-          Make your first investment
-        </Text>
+        <Text
+          className="color-gray-300 ml-3 font-montserratSemiBold text-base"
+          text={"Make your first investment"}
+        />
       </View>
     </View>
   );

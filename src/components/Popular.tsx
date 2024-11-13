@@ -2,7 +2,6 @@ import { View, Text } from "react-native";
 import React from "react";
 import { AppImage } from "./AppImage";
 import { layout } from "@src/utils";
-import { styles } from "@src/screens/home/styles";
 
 export const Popular = ({ data }) => {
   return (
@@ -21,8 +20,12 @@ export const Popular = ({ data }) => {
               }
             />
             <View className="ml-3">
-              <Text style={styles.stockText}>{item.stockName}</Text>
-              <Text style={styles.abbrvext}>{item.Abbrv}</Text>
+              <Text className="font-montserratSemiBold text-xl">
+                {item.stockName}
+              </Text>
+              <Text className="font-montserratRegular text-sm">
+                {item.Abbrv}
+              </Text>
             </View>
           </View>
 
@@ -31,7 +34,7 @@ export const Popular = ({ data }) => {
               item.stockOption === "up" ? "bg-green-700" : "bg-red-700"
             } px-2 py-1 rounded-full`}
           >
-            <Text className={"color-white"} style={styles.stockText}>{`${
+            <Text className={"color-white font-montserratMedium text-base"}>{`${
               item.stockOption === "up" ? "↑ " : "↓"
             } ${item.stockPercentage}%`}</Text>
           </View>
